@@ -44,9 +44,10 @@ public class MainActivity extends AppCompatActivity {
         EditText buyingPriceInput = (EditText) findViewById(R.id.buyingPriceInput);
         EditText quantityInput = (EditText) findViewById(R.id.quantityInput);
         TextView profitText = (TextView) findViewById(R.id.profitInput);
+        TextView taxText = (TextView) findViewById(R.id.taxText);
 
 
-        float sellingPrice,buyingPrice,quantity,amountOfBitcoin,profit;
+        float sellingPrice,buyingPrice,quantity,amountOfBitcoin,profit,tax;
 
         //Getting Input from EditText
         if(!TextUtils.isEmpty(sellingPriceInput.getText().toString())) {
@@ -77,7 +78,9 @@ public class MainActivity extends AppCompatActivity {
         if(buyingPrice!=0) {
             amountOfBitcoin = quantity / buyingPrice;
             profit = (sellingPrice * amountOfBitcoin) - (buyingPrice * amountOfBitcoin);
-
+            tax=(quantity*(1.0f/100.0f));
+            tax=tax+(tax*(18.0f/100.0f));
+            taxText.setText(String.valueOf(tax));
             //Display part
             profitText.setText(String.valueOf(profit));
         }

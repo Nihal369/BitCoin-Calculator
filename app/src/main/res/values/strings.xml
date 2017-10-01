@@ -8,4 +8,5 @@
     <string name="hint_sp">Enter Selling Price in INR</string>
     <string name="hint_bp">Enter Buying Price in INR</string>
     <string name="hint_qty">Enter Quantity Price in INR</string>
+    <string name="tax">Tax</string>
 </resources>
