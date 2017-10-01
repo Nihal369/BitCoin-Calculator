@@ -4,4 +4,5 @@
     <string name="buying_price">Buying Price</string>
     <string name="quantity">Quantity</string>
     <string name="profit">Profit</string>
+    <string name="calculate">Calculate</string>
 </resources>
