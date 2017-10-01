@@ -18,6 +18,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         EditText quantityInput = (EditText) findViewById(R.id.quantityInput);
+        EditText sellingPriceInput = (EditText) findViewById(R.id.sellingPriceInput);
+        EditText buyingPriceInput = (EditText) findViewById(R.id.buyingPriceInput);
+
+
         quantityInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -34,6 +38,41 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        sellingPriceInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                calculateProfit();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        buyingPriceInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                calculateProfit();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
     }
 
     public void calculateProfit()
