@@ -81,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
             tax=(quantity*(1.0f/100.0f));
             tax=tax+(tax*(18.0f/100.0f));
             taxText.setText(String.valueOf(tax));
+
+            profit-=tax;
             //Display part
             profitText.setText(String.valueOf(profit));
         }
