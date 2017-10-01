@@ -5,4 +5,7 @@
     <string name="quantity">Quantity</string>
     <string name="profit">Profit</string>
     <string name="calculate">Calculate</string>
+    <string name="hint_sp">Enter Selling Price in INR</string>
+    <string name="hint_bp">Enter Buying Price in INR</string>
+    <string name="hint_qty">Enter Quantity Price in INR</string>
 </resources>
