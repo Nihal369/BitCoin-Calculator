@@ -118,7 +118,12 @@ public class MainActivity extends AppCompatActivity {
             amountOfBitcoin = quantity / buyingPrice;
             profit = (sellingPrice * amountOfBitcoin) - (buyingPrice * amountOfBitcoin);
             tax=(quantity*(1.0f/100.0f));
-            tax=tax+(tax*(18.0f/100.0f));
+            tax+=(tax*(18.0f/100.0f));
+            tax+=(quantity*(1.9f/100.0f));
+            tax+=(tax*(9.0f/100.0f));
+            tax+=(quantity*(1.0f/100.0f));
+            tax+=(tax*(18.0f/100.0f));
+
             taxText.setText(String.valueOf(tax));
 
             profit-=tax;
