@@ -8,6 +8,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -18,11 +19,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Object declarations
         EditText quantityInput = (EditText) findViewById(R.id.quantityInput);
         EditText sellingPriceInput = (EditText) findViewById(R.id.sellingPriceInput);
         EditText buyingPriceInput = (EditText) findViewById(R.id.buyingPriceInput);
+        CheckBox netBanking=(CheckBox) findViewById(R.id.netBanking);
 
 
+
+        //Listeners
         quantityInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -74,6 +79,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        netBanking.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                calculateProfit();
+            }
+        });
     }
 
     public void calculateProfit()
@@ -124,20 +136,22 @@ public class MainActivity extends AppCompatActivity {
             tax=(quantity*(1.0f/100.0f));
             tax+=(tax*(18.0f/100.0f));
 
+            //Selling fee
+            tax*=2;
+            //tax+=(quantity*(1.0f/100.0f));
+            //tax+=(tax*(18.0f/100.0f));
+
+
             //Netbanking to buy coins instantly costs nearly 2% extra
             if(netBanking.isChecked()) {
                 tax += (quantity * (1.9f / 100.0f));
                 tax += (tax * (9.0f / 100.0f));
             }
 
-            //Selling fee
-            tax+=(quantity*(1.0f/100.0f));
-            tax+=(tax*(18.0f/100.0f));
-
             //Display final tax
             taxText.setText(String.valueOf(tax));
 
-            //Actual profit recieved by the user
+            //Actual profit received by the user
             profit-=tax;
 
             //Display profit
