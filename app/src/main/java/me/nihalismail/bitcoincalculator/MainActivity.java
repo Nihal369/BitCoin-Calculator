@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -84,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         EditText quantityInput = (EditText) findViewById(R.id.quantityInput);
         TextView profitText = (TextView) findViewById(R.id.profitInput);
         TextView taxText = (TextView) findViewById(R.id.taxText);
+        CheckBox netBanking=(CheckBox) findViewById(R.id.netBanking);
 
 
         float sellingPrice,buyingPrice,quantity,amountOfBitcoin,profit,tax;
@@ -117,17 +119,28 @@ public class MainActivity extends AppCompatActivity {
         if(buyingPrice!=0) {
             amountOfBitcoin = quantity / buyingPrice;
             profit = (sellingPrice * amountOfBitcoin) - (buyingPrice * amountOfBitcoin);
+
+            //Unocoin fee of 1% and GST on the 1% at 18%
             tax=(quantity*(1.0f/100.0f));
             tax+=(tax*(18.0f/100.0f));
-            tax+=(quantity*(1.9f/100.0f));
-            tax+=(tax*(9.0f/100.0f));
+
+            //Netbanking to buy coins instantly costs nearly 2% extra
+            if(netBanking.isChecked()) {
+                tax += (quantity * (1.9f / 100.0f));
+                tax += (tax * (9.0f / 100.0f));
+            }
+
+            //Selling fee
             tax+=(quantity*(1.0f/100.0f));
             tax+=(tax*(18.0f/100.0f));
 
+            //Display final tax
             taxText.setText(String.valueOf(tax));
 
+            //Actual profit recieved by the user
             profit-=tax;
-            //Display part
+
+            //Display profit
             profitText.setText(String.valueOf(profit));
         }
     }

@@ -9,4 +9,5 @@
     <string name="hint_bp">Enter Buying Price in INR</string>
     <string name="hint_qty">Enter Quantity Price in INR</string>
     <string name="tax">Tax</string>
+    <string name="netbanking">Bought with netbanking (2% extra)</string>
 </resources>

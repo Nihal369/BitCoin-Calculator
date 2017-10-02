@@ -53,28 +53,6 @@
         android:background="#e9e9e9"
         android:id="@+id/buyingPriceInput" />
 
-    <TextView
-        android:text="@string/tax"
-        android:textAlignment="center"
-        android:textColor="#000"
-        android:textSize="30sp"
-        android:layout_marginTop="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/taxTitle" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:padding="5dp"
-        android:textColor="#000"
-        android:textSize="20sp"
-        android:textAlignment="center"
-        android:background="#e9e9e9"
-        android:id="@+id/taxText" />
-
 
     <TextView
         android:text="@string/quantity"
@@ -97,12 +75,43 @@
         android:background="#e9e9e9"
         android:id="@+id/quantityInput" />
 
+
+    <TextView
+        android:text="@string/tax"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/taxTitle" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:padding="5dp"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:background="#afafaf"
+        android:id="@+id/taxText" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/netbanking"
+        android:id="@+id/netBanking"
+        />
+
     <TextView
         android:text="@string/profit"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="30sp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/profit" />
@@ -116,7 +125,7 @@
         android:textColor="#000"
         android:textSize="20sp"
         android:textAlignment="center"
-        android:background="#e9e9e9"
+        android:background="#afafaf"
         android:id="@+id/profitInput" />
 
 
