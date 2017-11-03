@@ -10,4 +10,6 @@
     <string name="hint_qty">Enter Quantity Price in INR</string>
     <string name="tax">Tax</string>
     <string name="netbanking">Bought with netbanking (2% extra)</string>
+    <string name="koinex">Koinex</string>
+    <string name="unocoin">Unocoin</string>
 </resources>
