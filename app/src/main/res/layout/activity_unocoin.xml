@@ -18,45 +18,6 @@
     android:orientation="vertical"
     >
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/koinex"
-            android:id="@+id/koinexRadio"
-            />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/unocoin"
-            android:id="@+id/unocoinRadio"
-            />
-    </RadioGroup>
-    <TextView
-        android:text="@string/selling_price"
-        android:textAlignment="center"
-        android:textColor="#000"
-        android:textSize="30sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:id="@+id/sellingPrice" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_marginTop="10dp"
-        android:textAlignment="center"
-        android:hint="@string/hint_sp"
-        android:inputType="number"
-        android:ems="10"
-        android:background="#e9e9e9"
-        android:id="@+id/sellingPriceInput" />
-
     <TextView
         android:text="@string/buying_price"
         android:textAlignment="center"
@@ -80,11 +41,65 @@
 
 
     <TextView
+        android:text="@string/selling_price"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/sellingPrice" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:hint="@string/hint_sp"
+        android:inputType="number"
+        android:ems="10"
+        android:background="#e9e9e9"
+        android:id="@+id/sellingPriceInput" />
+
+
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:checkedButton="@id/koinexRadio"
+        >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/koinex"
+            android:textSize="20sp"
+            android:id="@+id/koinexRadio"
+            android:textColor="#000"
+            android:layout_marginStart="10dp"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unocoin"
+            android:id="@+id/unocoinRadio"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_marginStart="10dp"
+            />
+    </RadioGroup>
+
+
+    <TextView
         android:text="@string/quantity"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="30sp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/quantity" />
